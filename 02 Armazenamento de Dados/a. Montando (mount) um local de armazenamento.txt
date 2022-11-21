@@ -13,3 +13,5 @@ CREATE TABLE alunos (
 
 
 INSERT INTO alunos (AlunoID, Nome, Sobrenome, Endereco, Cidade) VALUES (1, 'Carlos Alberto', 'da Silva', 'Av. que sobe e desce que ninguém conhece', 'Manaus');
+
+selec * from alunos;

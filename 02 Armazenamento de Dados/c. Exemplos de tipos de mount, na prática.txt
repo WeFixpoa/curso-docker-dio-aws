@@ -1,8 +1,8 @@
 ****bind mount *****
 
-docker run -dti --mount type=bind,src=/opt/teste,dst=/teste debian
+docker run -dti --mount type=bind,src=/data/debian-A,dst=/data --name debian-A debian
 
-docker run -dti --mount type=bind,src=/opt/teste,dst=/teste,ro debian
+docker run -dti --mount type=bind,src=/data/debian-A,dst=/data,ro --name debian-A debian
 
 ***volumes****
 
@@ -11,7 +11,10 @@ docker volume ls
 
 	/var/lib/docker/volumes/teste/_data
 	
-docker run -dti --mount type=volume,src=teste,dst=teste debian
+docker run -dti --name debian-A --mount type=volume,src=data-debian,dst=/data debian
+docker run -dti --name debian-B --mount type=volume,src=data-debian,dst=/data debian
+
+ docker run -dti --mount type=volume,src=centos-A,dst=/data --name centos-A centos
 
 docker volume rm teste
 

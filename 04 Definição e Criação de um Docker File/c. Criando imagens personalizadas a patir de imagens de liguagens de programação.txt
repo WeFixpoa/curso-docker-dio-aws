@@ -11,3 +11,13 @@ WORKDIR /usr/src/app
 COPY app.py /usr/src/app
 
 CMD [ "python", "./app.py" ]
+
+# docker image build -t app-python:1.0 .
+
+# docker image tag 9728f9b961cd 192.168.5.18:5000/app-python:1.0
+
+# docker push 192.168.5.18:5000/app-python:1.0
+
+# curl 192.168.5.18:5000/v2/_catalog
+
+# docker run  -it --name app-python 192.168.5.18:5000/app-python:1.0

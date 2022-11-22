@@ -2,13 +2,16 @@ docker run -d -p 5000:5000 --restart=always --name registry registry:2
 
 docker logout
 
-docker image tag d9fd92c431ff 192.168.5.18:5000/app-go:1.0
+docker image tag (tag) 192.168.5.18:5000/app-go:1.0
+
+docker image tag a677e685f4ae 192.168.5.18:5000/debian-apache:1.0
 
 
-curl localhost:5000/v2/_catalog
+curl 192.168.5.18:5000/v2/_catalog
 
 
-docker push  localhost:5000/my-go-app:1.0
+docker push  192.168.5.18:5000/my-go-app:1.0
+docker push  192.168.5.18:5000/debian-apache:1.0
 
 
 nano /etc/docker/daemon.json 
@@ -19,3 +22,5 @@ nano /etc/docker/daemon.json
 systemctl restart docker
 
 docker push  localhost:5000/my-go-app:1.0
+
+docker run  -dti -p 80:80 --name meu-apache 192.168.5.18:5000/debian-apache:1.0

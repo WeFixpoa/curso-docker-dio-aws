@@ -17,5 +17,5 @@ CREATE TABLE alunos (
 
 
 # INSERT INTO alunos (AlunoID, Nome, Sobrenome, Endereco, Cidade) VALUES (1, 'Carlos Alberto', 'da Silva', 'Av. que sobe e desce que ninguém conhece', 'Manaus');
-
+# INSERT INTO alunos (AlunoID, Nome, Sobrenome, Endereco, Cidade) VALUES (1, 'Jonas Brum', 'Lacerda', 'Av. que sobe e desce que ninguém conhece', 'Manaus');
 # select * from alunos;
